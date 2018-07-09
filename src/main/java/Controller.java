@@ -21,7 +21,7 @@ import static spark.Spark.get;
                 String result = randomiser.assignARandomName();
 
                 HashMap<String, Object> model = new HashMap<>();
-                model.put("randomame", result);
+                model.put("names", result);
                 model.put("template", "oneStudent.vtl");
                 return new ModelAndView(model, "layout.vtl");
             }, velocityTemplateEngine);

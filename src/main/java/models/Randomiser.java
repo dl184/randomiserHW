@@ -8,11 +8,9 @@ public class Randomiser {
     private ArrayList<String> names;
 
 
-    public void setNames(ArrayList<String> names) {
-        this.names = names;
-    }
-
     public Randomiser() {
+
+        names = new ArrayList<>();
 
         names.add("Derek");
         names.add("Adri");
@@ -40,8 +38,12 @@ public class Randomiser {
         return names;
         }
 
-        /* Below we pass in the array list of names and used the collections.shuffle method, we assign "name to the
-           result and use .get(0) to get the first name out that shuffled array */
+    public void setNames(ArrayList<String> names) {
+        this.names = names;
+    }
+
+    /* Below we pass in the array list of names and used the collections.shuffle method, we assign "name to the
+               result and use .get(0) to get the first name out that shuffled array */
         public String assignARandomName(){
         Collections.shuffle(names);
         String name = names.get(0);
@@ -49,14 +51,14 @@ public class Randomiser {
     }
 
     public ArrayList<String> listRandomNames(int num){
-        ArrayList<String> names = new ArrayList<>();
+        ArrayList<String> chosenNames = new ArrayList<>();
         Collections.shuffle(names);
 
         for(int i =0; i < num; i++) {
 
-            String name = names.get(i);
-            names.add(name);
+            String name = chosenNames.get(i);
+            chosenNames.add(name);
         }
-        return names;
+        return chosenNames;
     }
 }
